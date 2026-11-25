@@ -3,7 +3,7 @@
 [![CI](https://github.com/omar-hanafy/voice-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/omar-hanafy/voice-mcp/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/omar-hanafy/voice-mcp)](https://github.com/omar-hanafy/voice-mcp/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Node.js 20+](https://img.shields.io/badge/node-%3E%3D20-339933)
+![Node.js 22+](https://img.shields.io/badge/node-%3E%3D22-339933)
 ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-lightgrey)
 
 Hear when your coding agent finishes a turn or needs you, without watching the terminal.
@@ -30,7 +30,7 @@ No extra model calls, no network traffic (unless you enable ntfy), and nothing l
 
 ## Requirements
 
-- Node.js 20 or newer on `PATH`
+- Node.js 22 or newer on `PATH`
 - macOS: nothing else (`say` and `afplay` are built in)
 - Windows: nothing else (uses the built-in Windows PowerShell and System.Speech)
 - Linux: `espeak-ng` for the built-in voice and one of `paplay`, `pw-play`, `aplay`, or `ffplay`

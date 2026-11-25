@@ -11,7 +11,7 @@ import { OS_LABEL, type OsFamily } from '../platform.js';
 import { checkProvider } from '../speech/availability.js';
 import { providerOrder } from '../speech/engine.js';
 import { errorMessage } from '../util/errors.js';
-import { VERSION } from '../version.js';
+import { MIN_NODE_MAJOR, VERSION } from '../version.js';
 import { loadEffectiveConfig } from './report.js';
 
 export type CheckLevel = 'ok' | 'warn' | 'fail' | 'info';
@@ -35,10 +35,10 @@ export async function runDoctor(params: {
 
   const major = Number(process.versions.node.split('.')[0]);
   add({
-    level: major >= 20 ? 'ok' : 'fail',
+    level: major >= MIN_NODE_MAJOR ? 'ok' : 'fail',
     name: 'Node.js',
     detail: `${process.versions.node} on ${OS_LABEL[family]} (${process.arch}); voice-mcp ${VERSION}`,
-    ...(major >= 20 ? {} : { hint: 'Install Node.js 20 or newer.' }),
+    ...(major >= MIN_NODE_MAJOR ? {} : { hint: `Install Node.js ${MIN_NODE_MAJOR} or newer.` }),
   });
 
   try {

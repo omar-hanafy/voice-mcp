@@ -13,6 +13,10 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    ignore:
+      # Node.js types must match the oldest supported Node.js (package.json engines), not the newest.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     cooldown:
       default-days: 7
     groups:

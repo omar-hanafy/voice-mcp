@@ -15,6 +15,10 @@ for (const manifest of ['plugin/.claude-plugin/plugin.json', 'plugin/.codex-plug
   const found = read(manifest).version;
   if (found !== version) problems.push(`${manifest} has version ${found}; package.json has ${version}`);
 }
+const swiftbar = /<swiftbar\.version>([^<]+)<\/swiftbar\.version>/.exec(
+  readFileSync(join(root, 'integrations/swiftbar/voice-mcp.5s.js'), 'utf8')
+)?.[1];
+if (swiftbar !== version) problems.push(`integrations/swiftbar/voice-mcp.5s.js has version ${swiftbar}; package.json has ${version}`);
 if (!readFileSync(join(root, 'CHANGELOG.md'), 'utf8').includes(`## ${version}`)) {
   problems.push(`CHANGELOG.md has no "## ${version}" section`);
 }

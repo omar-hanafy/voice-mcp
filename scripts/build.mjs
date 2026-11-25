@@ -6,7 +6,10 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const { version } = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
+const { version, engines } = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
+// Compile for the oldest supported Node.js so the bundle never relies on newer syntax.
+const minNode = /^>=(\d+)$/.exec(engines?.node ?? '')?.[1];
+if (!minNode) throw new Error(`package.json engines.node must look like ">=22", got ${JSON.stringify(engines?.node)}`);
 
 await build({
   entryPoints: [join(root, 'src/main.ts')],
@@ -14,7 +17,7 @@ await build({
   bundle: true,
   platform: 'node',
   format: 'esm',
-  target: 'node20',
+  target: `node${minNode}`,
   legalComments: 'none',
   charset: 'utf8',
   define: { __VOICE_MCP_VERSION__: JSON.stringify(version) },

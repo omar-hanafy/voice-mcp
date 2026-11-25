@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0
+
+### Changed
+
+- Node.js 22 or newer is now required (Node.js 20 reached end of life in April 2026).
+  `voice-mcp doctor` reports an older Node.js as a failure.
+
 ## 0.5.0
 
 First standalone open-source release. Earlier versions shipped inside a private plugin collection

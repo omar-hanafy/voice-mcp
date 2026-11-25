@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // <swiftbar.title>Voice MCP</swiftbar.title>
-// <swiftbar.version>0.5.0</swiftbar.version>
+// <swiftbar.version>0.6.0</swiftbar.version>
 // <swiftbar.author>Omar Khaled</swiftbar.author>
 // <swiftbar.desc>Mute, stop, and choose voices for voice-mcp from the macOS menu bar.</swiftbar.desc>
 // <swiftbar.dependencies>node</swiftbar.dependencies>

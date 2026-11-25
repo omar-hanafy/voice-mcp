@@ -1,6 +1,6 @@
 {
   "name": "voice-mcp",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Spoken completion summaries, question alerts, and a fire-and-forget speak tool for Claude Code, Codex, Antigravity, and other MCP clients on macOS and Windows.",
   "license": "MIT",
   "author": "Omar Khaled Hanafy",
@@ -25,7 +25,7 @@
   "type": "module",
   "private": true,
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "bin": {
     "voice-mcp": "plugin/dist/voice-mcp.mjs"
@@ -42,10 +42,10 @@
   },
   "devDependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "@types/node": "^20.19.0",
+    "@types/node": "^22.20.7",
     "esbuild": "^0.28.1",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.10"
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.2"
   },
   "allowScripts": {
     "esbuild": true,
