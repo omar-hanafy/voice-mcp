@@ -1,5 +1,11 @@
 # Voice MCP
 
+[![CI](https://github.com/omar-hanafy/voice-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/omar-hanafy/voice-mcp/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/omar-hanafy/voice-mcp)](https://github.com/omar-hanafy/voice-mcp/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Node.js 20+](https://img.shields.io/badge/node-%3E%3D20-339933)
+![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Windows%20%7C%20Linux-lightgrey)
+
 Hear when your coding agent finishes a turn or needs you, without watching the terminal.
 
 Voice MCP is a plugin for **Claude Code**, **Codex**, and **Google Antigravity**, and an MCP server
@@ -260,6 +266,12 @@ node scripts/verify-hosts.mjs   # install into isolated Claude/Codex/agy homes a
 `plugin/dist/voice-mcp.mjs`, and assets. The bundle is committed so installs need no build. Rebuild
 it with `npm run build` whenever `src/` changes; CI fails if it is stale. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for the layout and conventions.
+
+## Contributing
+
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately as described in
+[SECURITY.md](SECURITY.md).
 
 ## License
 
