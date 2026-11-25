@@ -1,3 +1,4 @@
+import os from 'node:os';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 
@@ -44,6 +45,8 @@ describe('resolvePaths', () => {
   it('keeps Linux temp files in the private runtime directory when available', () => {
     const paths = resolvePaths({ platform: 'linux', env: { XDG_RUNTIME_DIR: '/run/user/1000' }, homeDir: home, pluginRoot: '/p' });
     expect(path.dirname(paths.tempDir)).toBe(path.resolve('/run/user/1000'));
+    const relative = resolvePaths({ platform: 'linux', env: { XDG_RUNTIME_DIR: 'run/user' }, homeDir: home, pluginRoot: '/p' });
+    expect(path.dirname(relative.tempDir)).toBe(path.resolve(os.tmpdir()));
   });
 
   it('locates the bundled chime under the plugin root', () => {

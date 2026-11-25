@@ -8828,7 +8828,10 @@ function resolvePaths(inputs = {}) {
   const env = inputs.env ?? process.env;
   const family = osFamily(inputs.platform);
   const homeDir = inputs.homeDir ?? os2.homedir();
-  const systemTemp = inputs.tempDir ?? (family === "linux" ? nonEmpty(env.XDG_RUNTIME_DIR) ?? os2.tmpdir() : os2.tmpdir());
+  const runtimeDir = nonEmpty(env.XDG_RUNTIME_DIR);
+  const systemTemp = path4.resolve(
+    inputs.tempDir ?? (family === "linux" && runtimeDir && path4.isAbsolute(runtimeDir) ? runtimeDir : os2.tmpdir())
+  );
   const override = nonEmpty(env.VOICE_MCP_HOME);
   const dataDir = path4.resolve(
     override ? expandHome(override, homeDir) : defaultDataDir(family, env, homeDir)

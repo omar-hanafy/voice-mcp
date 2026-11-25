@@ -95,9 +95,12 @@ export function resolvePaths(inputs: PathInputs = {}): AppPaths {
   const env = inputs.env ?? process.env;
   const family = osFamily(inputs.platform);
   const homeDir = inputs.homeDir ?? os.homedir();
-  // On Linux /tmp is shared between users; the per-user runtime dir is private by design.
-  const systemTemp =
-    inputs.tempDir ?? (family === 'linux' ? (nonEmpty(env.XDG_RUNTIME_DIR) ?? os.tmpdir()) : os.tmpdir());
+  // On Linux /tmp is shared between users; the per-user runtime dir is private by design. The XDG
+  // spec requires it to be absolute, so a relative value is ignored.
+  const runtimeDir = nonEmpty(env.XDG_RUNTIME_DIR);
+  const systemTemp = path.resolve(
+    inputs.tempDir ?? (family === 'linux' && runtimeDir && path.isAbsolute(runtimeDir) ? runtimeDir : os.tmpdir())
+  );
 
   const override = nonEmpty(env.VOICE_MCP_HOME);
   const dataDir = path.resolve(
