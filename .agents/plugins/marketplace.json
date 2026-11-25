@@ -1,0 +1,20 @@
+{
+  "name": "voice-mcp",
+  "interface": {
+    "displayName": "Voice MCP"
+  },
+  "plugins": [
+    {
+      "name": "voice-mcp",
+      "source": {
+        "source": "local",
+        "path": "./plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

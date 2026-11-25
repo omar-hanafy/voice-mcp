@@ -1,0 +1,15 @@
+{
+  "name": "voice-mcp",
+  "owner": {
+    "name": "Omar Khaled",
+    "url": "https://github.com/omar-hanafy"
+  },
+  "description": "Voice MCP: hear when your coding agent finishes or needs you.",
+  "plugins": [
+    {
+      "name": "voice-mcp",
+      "source": "./plugin",
+      "description": "Spoken end-of-turn summaries, question alerts, and a fire-and-forget speak tool for coding agents, with a shared speech queue, mute and stop controls, guardrails, and built-in macOS, Windows, and Linux voices."
+    }
+  ]
+}

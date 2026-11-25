@@ -1,0 +1,24 @@
+{
+  "name": "voice-mcp",
+  "version": "0.5.0",
+  "description": "Spoken end-of-turn summaries, question alerts, and a fire-and-forget speak tool for coding agents, with a shared speech queue, mute and stop controls, guardrails, and built-in macOS, Windows, and Linux voices.",
+  "author": {
+    "name": "Omar Khaled",
+    "url": "https://github.com/omar-hanafy"
+  },
+  "homepage": "https://github.com/omar-hanafy/voice-mcp",
+  "repository": "https://github.com/omar-hanafy/voice-mcp",
+  "license": "MIT",
+  "keywords": ["voice", "tts", "speech", "notifications", "hooks", "mcp"],
+  "mcpServers": "./mcp_config.json",
+  "hooks": "./hooks/codex-hooks.json",
+  "interface": {
+    "displayName": "Voice MCP",
+    "shortDescription": "Hear when your agent finishes or needs you.",
+    "longDescription": "Speaks a short summary when a turn ends, reads questions aloud before the question prompt opens, and adds a fire-and-forget speak tool. One shared queue keeps several agents from talking over each other, with mute, stop, and anti-spam guardrails. Works with the built-in macOS, Windows, and Linux voices; Kokoro, Piper, or your own TTS command are optional.",
+    "developerName": "Omar Khaled",
+    "category": "Productivity",
+    "capabilities": ["Interactive"],
+    "defaultPrompt": "Use voice-mcp to say a short test sentence aloud."
+  }
+}

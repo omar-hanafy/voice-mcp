@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "voice-mcp": {
+      "command": "node",
+      "args": ["./dist/voice-mcp.mjs", "mcp"],
+      "cwd": "."
+    }
+  }
+}

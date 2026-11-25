@@ -1,0 +1,54 @@
+{
+  "name": "voice-mcp",
+  "version": "0.5.0",
+  "description": "Spoken completion summaries, question alerts, and a fire-and-forget speak tool for Claude Code, Codex, Antigravity, and other MCP clients on macOS and Windows.",
+  "license": "MIT",
+  "author": "Omar Khaled Hanafy",
+  "homepage": "https://github.com/omar-hanafy/voice-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omar-hanafy/voice-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omar-hanafy/voice-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "tts",
+    "text-to-speech",
+    "claude-code",
+    "codex",
+    "antigravity",
+    "hooks"
+  ],
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "voice-mcp": "plugin/dist/voice-mcp.mjs"
+  },
+  "files": [
+    "plugin"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run build && npm test && node scripts/check-dist.mjs",
+    "chime": "node scripts/generate-chime.mjs"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@types/node": "^20.19.0",
+    "esbuild": "^0.28.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "fsevents": true
+  }
+}

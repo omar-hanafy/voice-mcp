@@ -1,0 +1,6 @@
+# Keep LF everywhere so the committed bundle and shebangs work on every OS.
+* text=auto eol=lf
+*.wav binary
+*.png binary
+# The bundled runtime is generated; collapse it in diffs.
+plugin/dist/** linguist-generated=true -diff

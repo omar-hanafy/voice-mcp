@@ -1,0 +1,20 @@
+{
+  "name": "voice-mcp",
+  "version": "0.5.0",
+  "description": "Spoken end-of-turn summaries, question alerts, and a fire-and-forget speak tool for coding agents, with a shared speech queue, mute and stop controls, guardrails, and built-in macOS, Windows, and Linux voices.",
+  "author": {
+    "name": "Omar Khaled",
+    "url": "https://github.com/omar-hanafy"
+  },
+  "homepage": "https://github.com/omar-hanafy/voice-mcp",
+  "repository": "https://github.com/omar-hanafy/voice-mcp",
+  "license": "MIT",
+  "keywords": ["voice", "tts", "speech", "notifications", "hooks", "mcp"],
+  "mcpServers": {
+    "voice-mcp": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/dist/voice-mcp.mjs", "mcp"]
+    }
+  },
+  "hooks": "./hooks/claude-hooks.json"
+}

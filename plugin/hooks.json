@@ -1,0 +1,13 @@
+{
+  "voice-completion": {
+    "Stop": [{ "type": "command", "command": "node ./dist/voice-mcp.mjs hook", "timeout": 10 }]
+  },
+  "voice-question": {
+    "PreToolUse": [
+      {
+        "matcher": "ask_question",
+        "hooks": [{ "type": "command", "command": "node ./dist/voice-mcp.mjs hook", "timeout": 10 }]
+      }
+    ]
+  }
+}
